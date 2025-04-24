@@ -9,62 +9,46 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class ARU {
-    public ARU() {
-    }
-
-    public int[] ARU(int[] A) {
-        int n = A.length;
-        if (n == 0) {
-            return A;
-        } else {
-            int k = (Integer)Collections.max(Arrays.stream(A).boxed().toList());
-            double m = Math.ceil(Math.sqrt((double)k));
-            int j = 0;
-            int[] Q = new int[(int)m + 2];
-            int[] R = new int[(int)m + 2];
-            int[] B = new int[n];
-            System.out.println("Calculating R and Q");
-
-            while(j < n) {
-                Q[j] = (int)((double)A[j] / m);
-                R[j] = (int)((double)A[j] % m);
-                ++j;
-            }
-
-            Arrays.fill(Q, 0);
-            Arrays.fill(R, 0);
-            int[] var11 = A;
-            int var12 = A.length;
-
-            int i;
-            int d;
-            int var10003;
-            for(i = 0; i < var12; ++i) {
-                d = var11[i];
-                int q = (int)((double)d / m);
-                int r = (int)((double)d % m);
-                var10003 = Q[q]++;
-                var10003 = R[r]++;
-            }
-
-            for(i = 1; (double)i <= m; ++i) {
-                Q[i] += Q[i - 1];
-                R[i] += R[i - 1];
-            }
-
-            for(j = n - 1; j >= 0; --j) {
-                d = (int)((double)A[j] % m);
-                var10003 = R[d]--;
-                B[R[d]] = A[j];
-            }
-
-            for(i = n - 1; i >= 0; --i) {
-                d = (int)((double)B[i] / m);
-                var10003 = Q[d]--;
-                A[Q[d]] = B[i];
-            }
-
-            return A;
+    public int[] ARU(int[] inputArray) {
+        int arrayLength = inputArray.length;
+        if (arrayLength == 0) {
+            return inputArray;
         }
+
+        int maxValue = Collections.max(Arrays.stream(inputArray).boxed().toList());
+        int sqrtMax = (int)Math.ceil(Math.sqrt((double) maxValue));
+        int[] quotientCounts = new int[(int) sqrtMax + 2];  // Count frequencies of quotients
+        int[] remainderCounts = new int[(int) sqrtMax + 2]; // Count frequencies of remainders
+        int[] tempArray = new int[arrayLength];
+
+        System.out.println("Calculating quotient and remainder counts");
+
+        // Count frequencies of quotients and remainders
+        for (int i = 0; i < arrayLength; i++) {
+            int quotient = (int) (inputArray[i] / sqrtMax);
+            int remainder = (int) (inputArray[i] % sqrtMax);
+            quotientCounts[quotient]++;
+            remainderCounts[remainder]++;
+        }
+
+        // Compute prefix sums (cumulative counts)
+        for (int i = 1; i <= sqrtMax; i++) {
+            quotientCounts[i] += quotientCounts[i - 1];
+            remainderCounts[i] += remainderCounts[i - 1];
+        }
+
+        // Distribute elements into tempArray based on remainders
+        for (int i = arrayLength - 1; i >= 0; i--) {
+            int remainder = (int) (inputArray[i] % sqrtMax);
+            tempArray[--remainderCounts[remainder]] = inputArray[i];
+        }
+
+        // Distribute elements back into inputArray based on quotients
+        for (int i = arrayLength - 1; i >= 0; i--) {
+            int quotient = (int) (tempArray[i] / sqrtMax);
+            inputArray[--quotientCounts[quotient]] = tempArray[i];
+        }
+
+        return inputArray;
     }
 }

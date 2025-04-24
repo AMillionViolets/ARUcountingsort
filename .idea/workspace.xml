@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c11749cd-3fc3-460a-9b7b-27b72024f0fc" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/org/example/ARU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,12 +34,12 @@
     &quot;assignee&quot;: &quot;FieldofViolets-nya&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AMillionViolets/ARUcountingsort.git",
-    "accountId": "a2b2c74d-f66e-4281-b609-872b7a64d113"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AMillionViolets/ARUcountingsort.git&quot;,
+    &quot;accountId&quot;: &quot;a2b2c74d-f66e-4281-b609-872b7a64d113&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -59,8 +57,9 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ender/Documents/School Projects/ARUCountingSort",
+    "last_opened_file_path": "C:/Users/ender/Documents/School Projects/ARUCountingSort/datastructures2025-FieldofViolets-nya",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,6 +112,7 @@
       <workItem from="1744646386010" duration="2741000" />
       <workItem from="1744981990122" duration="297000" />
       <workItem from="1744983247006" duration="879000" />
+      <workItem from="1745114374808" duration="37000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />

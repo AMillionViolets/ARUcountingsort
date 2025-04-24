@@ -10,6 +10,7 @@ public class CountingSort {
      * @return A new array containing the sorted elements.
      */
     public static int[] performCountSort(int[] dataToSort) {
+
         // Handle empty or null input gracefully
         if (dataToSort == null || dataToSort.length == 0) {
             return new int[0];
@@ -57,11 +58,14 @@ public class CountingSort {
         }
 
         return sortedData;
+
     }
 
     public static void main(String[] args) {
-        int[] unsortedNumbers = { 4, 3, 12, 1, 5, 5, 3, 9 };
-        System.out.println("Original array: " + Arrays.toString(unsortedNumbers));
+        RandomArrayGenerator generator = new RandomArrayGenerator();
+
+        int[] unsortedNumbers = generator.generateRandomArray(10,1,100);
+
 
         int[] sortedNumbers = performCountSort(unsortedNumbers);
 
@@ -82,5 +86,7 @@ public class CountingSort {
         System.out.println("Original array: " + Arrays.toString(singleElementArray));
         int[] sortedSingle = performCountSort(singleElementArray);
         System.out.println("Sorted array:   " + Arrays.toString(sortedSingle));
+
     }
+
 }
