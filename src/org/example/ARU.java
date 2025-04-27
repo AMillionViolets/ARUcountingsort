@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class ARU {
-    public int[] ARU(int[] inputArray) {
+    public static int[] ARU(int[] inputArray) {
         int arrayLength = inputArray.length;
         if (arrayLength == 0) {
             return inputArray;
@@ -41,6 +41,7 @@ public class ARU {
         for (int i = arrayLength - 1; i >= 0; i--) {
             int remainder = (int) (inputArray[i] % sqrtMax);
             tempArray[--remainderCounts[remainder]] = inputArray[i];
+
         }
 
         // Distribute elements back into inputArray based on quotients

@@ -149,7 +149,7 @@ public class ComprehensiveSortTest {
 
 
     private static void mySort(int[] array) {
-        CountingSort.performCountSort(array);
+        ARU_optimized.ARU_optimized(array);
     }
 
     private static boolean isSorted(int[] array) {
